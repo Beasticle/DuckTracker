@@ -1,0 +1,26 @@
+﻿@model DuckTracker.Data.Entities.Duck
+@using DuckTracker.Data.Entities
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center">@Model.Name</h1> 
+<div class="row justify-content-center">
+    <div class="col-auto">
+        <form asp-action="Edit">
+            @Html.ValidationSummary(false)
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input class="form-control" type="text" asp-for="Name" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Location">Location</label>
+                <input class="form-control" type="text" asp-for="Location" />
+            </div>
+            <input class="btn btn-primary" type="submit" />
+        </form>
+    </div>
+</div>
