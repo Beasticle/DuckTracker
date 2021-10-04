@@ -12,6 +12,7 @@ namespace DuckTracker.Controllers
     {
 
         private readonly DuckContext _context;
+        //private DuckContext Context;
         public DuckPageController(DuckContext context)
         {
             _context = context;
@@ -23,5 +24,39 @@ namespace DuckTracker.Controllers
 
             return View(ducksList);
         }
+
+        public IActionResult AddDuck(string Name, string Location)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("addDuck")]
+
+        public IActionResult AddDuck_Post([Bind("Name,Location")] Duck duck)
+        {
+            if (ModelState.IsValid)
+            {
+                var duckNameCheck = _context.Set<Duck>().Where(d => d.Name == duck.Name && d.Id != duck.Id).FirstOrDefault();
+
+                if (duckNameCheck == null)
+                {
+                    //do stuff
+                    _context.Set<Duck>().Add(duck);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    ModelState.AddModelError("Name", "A duck with this name already exists.");
+                    return View(duck);
+                }
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
+
+         
     }
 }

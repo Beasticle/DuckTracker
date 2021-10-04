@@ -37,11 +37,16 @@
                             @Html.DisplayFor(modelItem => item.Location)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         </td>
                     </tr>
                 }
+                <tr>
+                    <td>
+                        <a asp-action="AddDuck" class="btn btn-primary">Add a duck!</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
