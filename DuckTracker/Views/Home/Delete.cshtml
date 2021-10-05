@@ -5,11 +5,11 @@
 }
 
 
-<h1 class="text-center alert-danger">Are you sure you want to delete @Model.Name?</h1>
+<h1 class="text-center">Are you sure you want to delete @Model.Name?</h1>
 
 <div class="row justify-content-center">
     <div class="col-auto">
-        <form asp-action="Delete">
+        <form asp-action="Delete" class="jumbotron" style="color: white; background-color: rgba(0,0,0,.4)">
             @Html.ValidationSummary(false)
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -21,10 +21,9 @@
                 <input class="form-control" asp-for="Location" readonly />
             </div>
             <!--<p class="font-weight-bold">@Model.Name the duck</p>-->
-        
             <!--<p class="font-weight-bold">@Model.Location</p>-->
 
-            <input class="btn btn-danger" type="submit" value="Delete @Model.Name"/>
+            <input class="btn btn-danger" type="submit" value="Delete @Model.Name" />
             <a asp-action="Index" class="btn btn-primary">Cancel</a>
         </form>
     </div>

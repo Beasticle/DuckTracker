@@ -8,7 +8,7 @@
 <h1 class="text-center">Found a Duck? Add them here!</h1>
 <div class="row justify-content-center">
     <div class="col-auto">
-        <form asp-action="addDuck">
+        <form asp-action="addDuck" class="jumbotron" style="color: white; background-color: rgba(0,0,0,.4)">
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Name">Name</label>
@@ -22,6 +22,7 @@
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
             <input class="btn btn-primary" type="submit" />
+            <a  asp-controller="DuckPage" asp-action="Index" class="btn btn-primary">Cancel</a>
         </form>
     </div>
 </div>

@@ -12,7 +12,7 @@
 
 <div class="row justify-content-center">
     <div class="col-auto">
-        <table class="table table-responsive">
+        <table class="table table-responsive jumbotron" style="color: white; background-color: rgba(0,0,0,.4)">
             <thead>
                 <tr>
                     <th>
@@ -36,9 +36,9 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Location)
                         </td>
-                        <td>
-                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <td class="btn-group-sm">
+                            <a class="btn-sm btn-outline-primary" style="color: white" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn-sm btn-outline-danger" style="color: white" asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                         </td>
                     </tr>
                 }
