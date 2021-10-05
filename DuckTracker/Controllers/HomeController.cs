@@ -41,7 +41,7 @@ namespace DuckTracker.Controllers
 
         [HttpPost]
         [ActionName("Edit")]
-        public IActionResult Edit_Post([Bind("Id,Name,Location")] Duck duck)
+        public IActionResult Edit_Post([Bind("Id,Name,Location,Details")] Duck duck)
         {
             // editing
             if (ModelState.IsValid)
@@ -73,7 +73,7 @@ namespace DuckTracker.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public IActionResult Delete_Post([Bind("Id,Name,Location")] Duck duck)
+        public IActionResult Delete_Post([Bind("Id,Name,Location,Details")] Duck duck)
         {
             if (ModelState.IsValid)
             {

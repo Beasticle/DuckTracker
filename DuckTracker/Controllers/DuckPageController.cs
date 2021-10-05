@@ -33,7 +33,7 @@ namespace DuckTracker.Controllers
         [HttpPost]
         [ActionName("addDuck")]
 
-        public IActionResult AddDuck_Post([Bind("Name,Location")] Duck duck)
+        public IActionResult AddDuck_Post([Bind("Name,Location,Details")] Duck duck)
         {
             if (ModelState.IsValid)
             {

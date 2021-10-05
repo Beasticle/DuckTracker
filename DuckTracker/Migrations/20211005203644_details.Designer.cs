@@ -3,14 +3,16 @@ using DuckTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DuckTracker.Migrations
 {
     [DbContext(typeof(DuckContext))]
-    partial class DuckContextModelSnapshot : ModelSnapshot
+    [Migration("20211005203644_details")]
+    partial class details
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
